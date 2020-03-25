@@ -23,7 +23,7 @@ RUN useradd \
   print \
 && sed -i '/%sudo[[:space:]]/ s/ALL[[:space:]]*$/NOPASSWD:ALL/' /etc/sudoers
 
-RUN cd /var/spool \
+RUN cd   /var/spool \
     &&   mkdir lpd \
     &&   cd lpd \
     &&   mkdir td4100n \
