@@ -23,11 +23,7 @@ RUN useradd \
   print \
 && sed -i '/%sudo[[:space:]]/ s/ALL[[:space:]]*$/NOPASSWD:ALL/' /etc/sudoers
 
-RUN cd   /var/spool \
-    &&   mkdir lpd \
-    &&   cd lpd \
-    &&   mkdir td4100n \
-    &&   cd \
+RUN mkdir -p /var/spool/lpd/td4100n \
     curl https://download.brother.com/welcome/dlfp100139/td4100nlpr-1.0.3-0.i386.deb --output td4100nlpr-1.0.3-0.i386.deb && \
     dpkg -i --force-all td4100nlpr-1.0.3-0.i386.deb && \
     curl https://download.brother.com/welcome/dlfp100140/td4100ncupswrapper-1.0.3-0.i386.deb --output td4100ncupswrapper-1.0.3-0.i386.deb && \
