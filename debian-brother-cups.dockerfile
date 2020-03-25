@@ -1,4 +1,4 @@
-FROM i386/debian:latest
+FROM i386/ubuntu:latest
 
 # Install Packages (basic tools, cups, basic drivers, HP drivers)
 RUN apt-get update \
