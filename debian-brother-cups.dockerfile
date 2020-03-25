@@ -11,6 +11,7 @@ RUN apt-get update \
   cups-client \
   cups-bsd \
   cups-filters \
+  lib32stdc++6 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
 # Add user and disable sudo password checking
