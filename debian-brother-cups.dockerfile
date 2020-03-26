@@ -47,6 +47,7 @@ RUN /usr/sbin/cupsd \
   && cupsctl --remote-admin --remote-any --share-printers \
   && kill $(cat /var/run/cups/cupsd.pid)
 
+RUN brpapertoollpr_td4100n -P TD-4100N -n TNT -w 101.6 -h 150 -g 3.0 -m 2.0 -y .2 -x .2 -S 0
 
 # Default shell
 CMD ["/usr/sbin/cupsd", "-f"]
