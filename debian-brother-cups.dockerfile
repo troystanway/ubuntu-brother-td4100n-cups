@@ -34,7 +34,7 @@ RUN curl https://download.brother.com/welcome/dlfp100139/td4100nlpr-1.0.3-0.i386
     rm -f td4100nlpr-1.0.3-0.i386.deb td4100ncupswrapper-1.0.3-0.i386.deb && \
     apt-get purge -y curl libcurl4 libnghttp2-14 libpsl5 librtmp1 publicsuffix
 
-RUN sed -i 's/Listen localhost:631/Port 632/' /etc/cups/cupsd.conf && \
+RUN sed -i 's/Port 631/Port 632/' /etc/cups/cupsd.conf && \
 	sed -i 's/<Location \/>/<Location \/>\n  Allow All/' /etc/cups/cupsd.conf && \
 	sed -i 's/<Location \/admin>/<Location \/admin>\n  Allow All\n  Require user @SYSTEM/' /etc/cups/cupsd.conf && \
 	sed -i 's/<Location \/admin\/conf>/<Location \/admin\/conf>\n  Allow All/' /etc/cups/cupsd.conf && \
